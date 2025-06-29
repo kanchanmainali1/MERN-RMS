@@ -12,8 +12,10 @@ app.use(express.json());
 // Routes
 import userRoutes from './routes/userRoutes.js';
 import menuRoutes from './routes/menuRoutes.js';
+import orderRoutes from './routes/orderRoutes.js';
 app.use('/api/users', userRoutes);
 app.use('/api/menu', menuRoutes);
+app.use('/api/orders', orderRoutes);
 
 
 // DB + Server
