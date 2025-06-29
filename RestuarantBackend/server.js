@@ -11,7 +11,10 @@ app.use(express.json());
 
 // Routes
 import userRoutes from './routes/userRoutes.js';
+import menuRoutes from './routes/menuRoutes.js';
 app.use('/api/users', userRoutes);
+app.use('/api/menu', menuRoutes);
+
 
 // DB + Server
 mongoose.connect(process.env.MONGO_URI)
