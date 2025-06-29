@@ -13,9 +13,13 @@ app.use(express.json());
 import userRoutes from './routes/userRoutes.js';
 import menuRoutes from './routes/menuRoutes.js';
 import orderRoutes from './routes/orderRoutes.js';
+import billRoutes from './routes/billRoutes.js';
+
+
 app.use('/api/users', userRoutes);
 app.use('/api/menu', menuRoutes);
 app.use('/api/orders', orderRoutes);
+app.use('/api/bills', billRoutes);
 
 
 // DB + Server
