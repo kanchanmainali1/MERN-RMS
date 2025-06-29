@@ -16,6 +16,8 @@ import orderRoutes from './routes/orderRoutes.js';
 import billRoutes from './routes/billRoutes.js';
 import inventoryRoutes from './routes/inventoryRoutes.js';
 import reservationRoutes from './routes/reservationRoutes.js';
+import expenseRoutes from './routes/expenseRoutes.js';
+import reportRoutes from './routes/reportRoutes.js';
 
 
 app.use('/api/users', userRoutes);
@@ -24,6 +26,8 @@ app.use('/api/orders', orderRoutes);
 app.use('/api/bills', billRoutes);
 app.use('/api/reservations', reservationRoutes);
 app.use('/api/inventory', inventoryRoutes);
+app.use('/api/expenses', expenseRoutes);
+app.use('/api/reports', reportRoutes);
 
 
 // DB + Server
