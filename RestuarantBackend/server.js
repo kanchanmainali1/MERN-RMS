@@ -14,12 +14,14 @@ import userRoutes from './routes/userRoutes.js';
 import menuRoutes from './routes/menuRoutes.js';
 import orderRoutes from './routes/orderRoutes.js';
 import billRoutes from './routes/billRoutes.js';
+import inventoryRoutes from './routes/inventoryRoutes.js';
 
 
 app.use('/api/users', userRoutes);
 app.use('/api/menu', menuRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/bills', billRoutes);
+app.use('/api/inventory', inventoryRoutes);
 
 
 // DB + Server
