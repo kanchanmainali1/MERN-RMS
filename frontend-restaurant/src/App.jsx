@@ -1,8 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Login from '../../restaurant-react/src/pages/Login.jsx';
-import Dashboard from '../../restaurant-react/src/pages/Dashboard.jsx';
-import ProtectedRoute from '../../restaurant-react/src/components/ProtectedRoutes.jsx';
-import AuthProvider from '../../restaurant-react/src/context/AuthContext.jsx';
+import Login from './pages/Login.jsx';
+import Dashboard from './pages/Dashboard.jsx';
+import AuthProvider from './context/AuthContext.jsx';
+import ProtectedRoute from './components/ProtectedRoutes.jsx';
+
 
 function App() {
   return (
