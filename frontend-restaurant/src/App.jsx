@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login.jsx';
 import Dashboard from './pages/Dashboard.jsx';
-import AuthProvider from './context/AuthContext.jsx';
 import ProtectedRoute from './components/ProtectedRoutes.jsx';
+import { AuthProvider } from './context/AuthContext.jsx';
 
 
 function App() {
@@ -11,6 +11,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />} />
+
+
+
+          {/* Protected Route for Dashboard */}
           <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
         </Routes>
       </BrowserRouter>
