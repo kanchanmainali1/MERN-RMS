@@ -1,21 +1,38 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Login from './pages/Login.jsx';
-import Dashboard from './pages/Dashboard.jsx';
-import ProtectedRoute from './components/ProtectedRoutes.jsx';
 import { AuthProvider } from './context/AuthContext.jsx';
 
+import Home from './pages/Home.jsx';
+import Login from './pages/Login.jsx';
+
+import AdminDashboard from './pages/admin/Inventory.jsx';
+import WaiterDashboard from './pages/waiter/TableReservation.jsx';
+import CashierDashboard from './pages/cashier/Billing.jsx';
+import ChefDashboard from './pages/chef/KOTMangaer.jsx';
+
+import ProtectedRoute from './components/ProtectedRoutes.jsx';
+import Register from './pages/Register.jsx';
 
 function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
 
-
-
-          {/* Protected Route for Dashboard */}
-          <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+          <Route element={<ProtectedRoute allowedRoles={['admin']} />}>
+            <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          </Route>
+          <Route element={<ProtectedRoute allowedRoles={['waiter']} />}>
+            <Route path="/waiter/dashboard" element={<WaiterDashboard />} />
+          </Route>
+          <Route element={<ProtectedRoute allowedRoles={['cashier']} />}>
+            <Route path="/cashier/dashboard" element={<CashierDashboard />} />
+          </Route>
+          <Route element={<ProtectedRoute allowedRoles={['chef']} />}>
+            <Route path="/chef/dashboard" element={<ChefDashboard />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </AuthProvider>
@@ -23,5 +40,3 @@ function App() {
 }
 
 export default App;
-// This is the main entry point of the React application.
-// It sets up the routing for the application using React Router.
